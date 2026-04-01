@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosesgo - Yapay Zeka Otomasyon Ajansı</title>
+    <meta name="description" content="İşletmenizin büyümesini yapay zekâ ile hızlandırın. Prosesgo, Bursa merkezli yeni nesil AI otomasyon ajansıdır.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png?v=2">
+    <link rel="shortcut icon" href="logo.png?v=2">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="sticky-header">
+        <div class="container nav-container">
+            <div class="brand">Prosesgo</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#surec">Süreç</a></li>
+                    <li><a href="#hizmetler">Hizmetler</a></li>
+                    <li><a href="#faydalar">Faydalar</a></li>
+                    <li><a href="#gorusler">Görüşler</a></li>
+                    <li><a href="#hakkimizda">Hakkımızda</a></li>
+                    <li><a href="#sss">SSS</a></li>
+                </ul>
+            </nav>
+            <button class="btn btn-primary open-modal-btn">Görüşme Planla</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>İşletmenizin Büyümesini Yapay Zekâ ile Hızlandırın.</h1>
+                <p>En kritik iş süreçlerinizi otomatikleştirmek için yapay zekânın gücünü kullanın; zamandan tasarruf edin, performansınızı ikiye katlayın.</p>
+                <ul>
+                    <li>Operasyonel yükü azaltın</li>
+                    <li>Tekrar eden işleri otomatikleştirin</li>
+                    <li>Satış ve müşteri süreçlerini hızlandırın</li>
+                    <li>Daha kârlı ve ölçeklenebilir büyüme yakalayın</li>
+                </ul>
+                <button class="btn btn-primary open-modal-btn" style="padding: 1rem 2.5rem; font-size: 1.125rem;">Görüşme Planla</button>
+                <span class="trust-microcopy">Formu ilettikten sonra 24 saat içinde sizinle e-posta veya telefon üzerinden iletişime geçilir.</span>
+            </div>
+            <div class="hero-visual" id="tilt-card">
+                <div class="dashboard-mockup">
+                    <!-- Top bar -->
+                    <div class="dmock-topbar">
+                        <div class="dmock-dot" style="background:#ef4444"></div>
+                        <div class="dmock-dot" style="background:#f59e0b"></div>
+                        <div class="dmock-dot" style="background:#10b981"></div>
+                        <div class="dmock-title">AI Dashboard — Prosesgo</div>
+                        <div class="dmock-badge">LIVE</div>
+                    </div>
+                    <!-- Stat cards -->
+                    <div class="dmock-stats">
+                        <div class="dmock-stat">
+                            <span class="dmock-stat-label">Otomasyon</span>
+                            <span class="dmock-stat-val" id="stat1">0</span>
+                        </div>
+                        <div class="dmock-stat">
+                            <span class="dmock-stat-label">Tasarruf</span>
+                            <span class="dmock-stat-val" id="stat2">0%</span>
+                        </div>
+                        <div class="dmock-stat">
+                            <span class="dmock-stat-label">Görev</span>
+                            <span class="dmock-stat-val" id="stat3">0</span>
+                        </div>
+                    </div>
+                    <!-- Animated chart -->
+                    <canvas id="heroChart" class="dmock-canvas"></canvas>
+                    <!-- Bottom row -->
+                    <div class="dmock-bottom">
+                        <div class="dmock-bar-row">
+                            <span>Chatbot</span>
+                            <div class="dmock-bar"><div class="dmock-bar-fill" style="width:82%; background: linear-gradient(90deg,#3b82f6,#8b5cf6)"></div></div>
+                        </div>
+                        <div class="dmock-bar-row">
+                            <span>CRM</span>
+                            <div class="dmock-bar"><div class="dmock-bar-fill" style="width:65%; background: linear-gradient(90deg,#06b6d4,#3b82f6)"></div></div>
+                        </div>
+                        <div class="dmock-bar-row">
+                            <span>İçerik</span>
+                            <div class="dmock-bar"><div class="dmock-bar-fill" style="width:91%; background: linear-gradient(90deg,#10b981,#06b6d4)"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+        <div class="container trust-content">
+            <div class="trust-metric"><span>%87</span> Operasyonel Tasarruf</div>
+            <div class="trust-divider"></div>
+            <div class="trust-metric"><span>7/24</span> Kesintisiz Aktif Sistemler</div>
+        </div>
+    </div>
+
+    <!-- Process Section -->
+    <section id="surec" class="container">
+        <div class="section-header">
+            <h2>Prosesgo Süreç Modeli</h2>
+            <p>Fikirden canlı kullanıma kadar, yapay zekâyı iş süreçlerinize nasıl entegre ettiğimizi adım adım görün.</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="process-number">01</div>
+                <h3>Keşif & Analiz</h3>
+                <p>İş süreçlerinizi derinlemesine inceliyoruz. Mevcut akışlarınızı haritalandırıyor, darboğazları tespit ediyor ve yapay zekânın en fazla katma değer sağlayacağı senaryoları tasarlıyoruz.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-number">02</div>
+                <h3>Tasarım & Geliştirme</h3>
+                <p>Sisteminize tam entegre çalışacak özel çözümleri kurguluyoruz. Veri güvenliğini ön planda tutarak, akıllı ajanlar, AI modelleri ve uçtan uca otomasyon mimarisini inşa ediyoruz.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-number">03</div>
+                <h3>Kurulum & Devreye Alma</h3>
+                <p>Çözümleri canlı ortama sorunsuz taşıyor, ekibinize kullanım eğitimlerini veriyoruz. Kurulum sonrası optimizasyonlarla sistemin her zaman en yüksek verimde çalışmasını sağlıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="hizmetler" class="container">
+        <div class="section-header">
+            <h2>Yeni Nesil Yapay Zekâ Çözümleri</h2>
+            <p>İşletmenizin ihtiyaçlarına göre tasarlanan, uçtan uca otomasyon ve yapay zekâ çözümleri</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>İş Akışı</h3>
+                <p>Departmanlar arası veri transferinden günlük operasyonlara kadar, tekrarlanan tüm iş kalemlerinizi otomatikleştiriyoruz. Uygulamalarınızı uçtan uca bağlayarak minimum insan hatası sağlıyoruz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3>Müşteri Hizmetleri</h3>
+                <p>Akıllı asistanlarımız ve dil modellerimizle müşterilerinize 7/24 anında, doğru ve empati kuran yanıtlar sunan sistemler inşa ediyoruz. Destek yükünüzü %80 oranında hafifletiyoruz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Satış / CRM Otomasyonları</h3>
+                <p>Potansiyel müşteri yakalama, teklif durumlarını güncelleme ve e-posta etkileşimlerini takip etme süreçlerini AI destekli sistemlere emanet edin. Satış ekibiniz sadece kapanışa odaklansın.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>İçerik Üretimi</h3>
+                <p>Marka dilinizi öğrenip, sosyal medya metinlerinden blog yazılarına, görsel tasarımlardan kampanya kurgularına kadar zengin içerik üretim sürecini hızlandırıp otonomlaştırıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="faydalar" class="container">
+        <div class="section-header">
+            <h2>Yapay Zekâ Avantajını Yaşayın</h2>
+            <p>Prosesgo ile çalıştığınızda otomasyonların işinize kattığı temel kazanımlar</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h4>Artan Verimlilik</h4>
+                <p>Süreçlerinizi saniyeler içinde tamamlayarak, ekiplerinize asıl işlerine odaklanmaları için boş alan yaratın.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Düşük Maliyet</h4>
+                <p>Personel mesailerini azaltır, minimum hata payıyla hatalı işlem maliyetlerinin önüne geçersiniz.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Memnuniyet</h4>
+                <p>Müşterilerinize anında cevap verir, daha kişiselleştirilmiş bir iletişim deneyimi sunarsınız.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Ölçeklenebilirlik</h4>
+                <p>İş hacminiz 10 kat artsa bile, ek donanım ya da insan kaynağı ihtiyacı duymadan aynı hızda devam edersiniz.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Hızlı Karar Alma</h4>
+                <p>Büyük veri setlerini analiz eden sistemlerimiz sayesinde yönetici kararlarınızı verilere dayalı ve hızlı alırsınız.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>Uyumlu Çözümler</h4>
+                <p>Mevcut yazılım altyapınızı değiştirmeden, entegrasyon dostu modüllerle sistemlerinizi akıllandırıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="hakkimizda" class="about">
+        <div class="container about-content" style="padding: 6rem 2rem;">
+            <h2>Biz Kimiz ?</h2>
+            <p>Prosesgo, şirketlerin teknolojik dönüşümüne yapay zekâ entegrasyonlarıyla rehberlik eden yeni nesil bir otomasyon ajansıdır. Kurucumuz <strong>Hüseyin Şahin</strong> liderliğinde oluşturulan mühendislik yaklaşımıyla, hazır paket yazılımlar yerine tamamen kuruluşunuzun nabzına hitap eden özel projeler geliştiriyoruz.</p>
+            <p><strong>Bursa / Turkey</strong> merkezli ofisimizle, sınırları kaldıran yapay zeka gücünü hem bölgesel rekabette hem de global arenada en büyük silahınız haline getirmeye kararlıyız.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="gorusler" class="container">
+        <div class="section-header">
+            <h2>Müşterilerimiz Ne Diyor ?</h2>
+            <p>Yapay zekâ otomasyonu ile verimlilikte seviye atlayan firmaların hikayeleri.</p>
+        </div>
+        <div class="testimonials-grid">
+            <!-- Testimonial 1: Chatbot / Support -->
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Prosesgo'nun entegre ettiği AI destek chatbotu sayesinde e-ticaret sitemizdeki iade ve kargo soru yükümüz %85 azaldı. Hafta sonu dahi satışlarımızın arttığını gözlemliyoruz."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">O</div>
+                    <div class="author-info">
+                        <h5>Oğuz Yılmaz</h5>
+                        <span>E-Ticaret Operasyon Müdürü</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2: Clinic/Healthcare -->
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Kliniğimizin randevu yönetiminde devrim yarattılar. Sesli yapay zeka asistanı, gelen çağrıları karşılayıp takvimi düzenliyor; asistanlarımız sadece hastalarımızla yüz yüze iken ilgileniyor."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">Z</div>
+                    <div class="author-info">
+                        <h5>Zeynep Arıkan</h5>
+                        <span>Klinik Yönetim Kordinatörü</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3: Visual Content -->
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Görsel içerik üretim sürecinde stüdyo maliyetlerimizi Prosesgo ile minimize ettik. Moda ürünlerimizi farklı mankenler ve arka planlarla dakikalar içinde üretiyoruz."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">D</div>
+                    <div class="author-info">
+                        <h5>Deniz Korkmaz</h5>
+                        <span>Kreatif Ajans Direktörü</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 4: Video Automation -->
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Haftada 30'dan fazla Reels ve TikTok içeriğini manuel olarak yapmak kabustu. Prosesgo'nun kurduğu sistem sayesinde sadece metnimizi giriyor, hazır reklam videoları alıyoruz."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">B</div>
+                    <div class="author-info">
+                        <h5>Burak Çelik</h5>
+                        <span>Sosyal Medya Yöneticisi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="sss" class="container">
+        <div class="section-header">
+            <h2>Sorularınız, Yanıtlarımız</h2>
+            <p>Prosesgo'nun yapay zekâ ve otomasyon hizmetleri hakkında en sık sorulan sorular.</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Yapay zekâ otomasyonu nedir, işime nasıl fayda sağlar?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yapay zekâ otomasyonu, manuel yürüttüğünüz görevleri (müşteri yazışmaları, veri girişi, analiz) yazılım ve AI sistemleri aracılığıyla kendi kendine çalışır duruma getirmektir. Zamandan tasarruf ettirir ve hata payını sıfıra yaklaşırır.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Prosesgo hangi hizmetleri sunuyor?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>İş süreçleri entegrasyonu, yapay zeka tabanlı müşteri destek chatbotları ve sesli asistanları, CRM ve satış hunisi otomasyonları ve ölçeklenebilir AI görsel/video içerik üretim sistemleri oluşturuyoruz.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Bir otomasyon projesi ne kadar sürede hayata geçer?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Projenin kapsamına bağlı olarak genellikle keşif ve analiz evresi dahil 2 ila 6 hafta arasında sistemleri canlıya alıyor ve operasyonlarınıza entegre ediyoruz.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Kurulumdan sonra ne tür destek veriyorsunuz?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Kurulum sonrası ilk eğitimlerin yanı sıra, sistem metriklerini düzenli olarak gözlemleyerek AI modellerinin performans optimizasyonunu yapıyor ve periyodik teknik destek sunuyoruz.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Yapay zekâ otomasyonunun maliyeti nedir?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Kurulacak sistemlerin sayısı ve entegre edilecek ürünlere göre paketlerimiz değişkenlik göstermektedir. Detaylı analiz sonucunda şirketinizin bütçesine uyumlu projeler sunuyoruz. Keşif görüşmemiz tamamen ücretsizdir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>İşletmenizi Dönüştürmeye Hazır mısınız ?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2.5rem; color: #fff;">Prosesgo ekibiyle kısa bir keşif görüşmesi planlayın.</p>
+            <button class="btn btn-primary open-modal-btn" style="padding: 1rem 3rem; font-size: 1.25rem;">Görüşme Planla</button>
+            <p style="margin-top: 1.25rem; font-weight: 500;">Tamamen Ücretsizdir</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 2;">
+                    <div class="footer-brand">Prosesgo</div>
+                    <p style="margin-bottom: 1.5rem; max-width: 300px;">İşletmenizin geleceğini, yapay zekânın gücüyle tasarlıyoruz.</p>
+                    <p><strong>Kurucu:</strong> Hüseyin Şahin</p>
+                    <p><strong>Merkez:</strong> Bursa / Turkey</p>
+                    <p><strong>İletişim:</strong> team@prosesgo.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Servislerimiz</h4>
+                    <ul>
+                        <li><a href="#surec">Süreç Modeli</a></li>
+                        <li><a href="#hizmetler">Hizmetler</a></li>
+                        <li><a href="#faydalar">Avantajlar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#gorusler">Görüşler</a></li>
+                        <li><a href="#sss">SSS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Prosesgo. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="contact-modal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Kapat">&times;</button>
+            <h3>Görüşme Planla</h3>
+            <p>Projelerinizi hızlandırmak ve potansiyelinizi yapay zeka ile açığa çıkarmak için bilgileri doldurun.</p>
+            
+            <form id="schedule-form" action="https://formsubmit.co/teknoctrl@gmail.com" method="POST">
+                <!-- Disable Formsubmit redirect & captcha if Ajax is used anyway -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <label for="name">Ad Soyad</label>
+                    <input type="text" id="name" name="name" required placeholder="Örn: Ali Yılmaz">
+                </div>
+                <div class="form-group">
+                    <label for="company">İşletme Adı</label>
+                    <input type="text" id="company" name="company" required placeholder="Şirketiniz A.Ş.">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <input type="email" id="email" name="email" required placeholder="isim@sirket.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+90 5XX XXX XX XX">
+                </div>
+                <div class="form-group">
+                    <label for="needs">Kısa İhtiyaç Alanı</label>
+                    <textarea id="needs" name="needs" rows="3" required placeholder="Örn: Müşteri destek süreçlerimiz için 7/24 chatbot kurulumu..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn">Devam Et</button>
+                <div class="form-trust-text">
+                    Formu ilettikten sonra 24 saat içinde sizinle e-posta veya telefon üzerinden iletişime geçilir.
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+    <script>
+    // --- Animated counter ---
+    function animateCounter(el, target, suffix, duration) {
+        let start = 0, step = target / (duration / 16);
+        let timer = setInterval(() => {
+            start += step;
+            if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; }
+            el.textContent = Math.floor(start) + suffix;
+        }, 16);
+    }
+    setTimeout(() => {
+        animateCounter(document.getElementById('stat1'), 380, '+', 1800);
+        animateCounter(document.getElementById('stat2'), 87, '%', 1800);
+        animateCounter(document.getElementById('stat3'), 1240, '', 1800);
+    }, 400);
+
+    // --- Canvas chart ---
+    (function() {
+        const canvas = document.getElementById('heroChart');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const W = () => canvas.parentElement.clientWidth;
+        const H = () => canvas.height;
+        function resize() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = 90;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        // Animate a sine-like AI chart line
+        let t = 0;
+        const points = [];
+        const NPTS = 60;
+        for (let i = 0; i < NPTS; i++) points.push(0.5);
+
+        function drawChart() {
+            t += 0.04;
+            points.shift();
+            // Noisy wave that looks like AI output metrics
+            let y = 0.45 + 0.28 * Math.sin(t) + 0.1 * Math.sin(t * 2.7) + 0.06 * Math.sin(t * 5.1);
+            y = Math.max(0.08, Math.min(0.92, y));
+            points.push(y);
+
+            const w = canvas.width, h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            // Grid lines
+            ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+            ctx.lineWidth = 1;
+            for (let g = 1; g < 4; g++) {
+                ctx.beginPath();
+                ctx.moveTo(0, h * g / 4);
+                ctx.lineTo(w, h * g / 4);
+                ctx.stroke();
+            }
+
+            // Fill gradient under line
+            const grad = ctx.createLinearGradient(0, 0, 0, h);
+            grad.addColorStop(0, 'rgba(59,130,246,0.25)');
+            grad.addColorStop(1, 'rgba(59,130,246,0)');
+
+            ctx.beginPath();
+            points.forEach((p, i) => {
+                const x = (i / (NPTS - 1)) * w;
+                const py = h - p * h;
+                i === 0 ? ctx.moveTo(x, py) : ctx.lineTo(x, py);
+            });
+            const lastX = w, lastY = h - points[points.length-1] * h;
+            ctx.lineTo(lastX, h); ctx.lineTo(0, h); ctx.closePath();
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            // Main line
+            ctx.beginPath();
+            const lineGrad = ctx.createLinearGradient(0, 0, w, 0);
+            lineGrad.addColorStop(0, '#6366f1');
+            lineGrad.addColorStop(0.5, '#3b82f6');
+            lineGrad.addColorStop(1, '#06b6d4');
+            ctx.strokeStyle = lineGrad;
+            ctx.lineWidth = 2.5;
+            ctx.lineJoin = 'round';
+            points.forEach((p, i) => {
+                const x = (i / (NPTS - 1)) * w;
+                const py = h - p * h;
+                i === 0 ? ctx.moveTo(x, py) : ctx.lineTo(x, py);
+            });
+            ctx.stroke();
+
+            // Glowing dot at end
+            const dotX = w - 2;
+            const dotY = h - points[points.length-1] * h;
+            ctx.shadowBlur = 12;
+            ctx.shadowColor = '#3b82f6';
+            ctx.beginPath();
+            ctx.arc(dotX, dotY, 4, 0, Math.PI * 2);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            requestAnimationFrame(drawChart);
+        }
+        drawChart();
+    })();
+
+    // --- 3D Tilt on mouse move ---
+    (function() {
+        const card = document.getElementById('tilt-card');
+        if (!card) return;
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = (e.clientX - cx) / (rect.width / 2);   // -1 to 1
+            const dy = (e.clientY - cy) / (rect.height / 2);  // -1 to 1
+            const rotY = dx * 12;
+            const rotX = -dy * 8;
+            card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px) scale(1.03)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+        });
+    })();
+    </script>
+</body>
+</html>
