@@ -965,10 +965,18 @@ section {
     display: flex;
   }
 
-  /* Hero visual daha küçük */
+  /* Hero visual tam yükseklik */
   .hero-visual {
-    aspect-ratio: auto;
-    min-height: 280px;
+    aspect-ratio: unset !important;
+    min-height: 420px;
+    height: auto;
+  }
+
+  .ai-terminal-mockup {
+    position: relative;
+    inset: 0;
+    height: 100%;
+    min-height: 400px;
   }
 
   /* Terminal body mobilde dikey diz */
