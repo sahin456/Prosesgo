@@ -37,11 +37,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg-glow"></div>
+    <section class="hero" id="hero-section">
+        <div class="hero-bg-glow" id="cursor-glow"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <h1>İşletmenizin Büyümesini Yapay Zekâ ile Hızlandırın.</h1>
+                <h1>İşletmenizin Büyümesini Yapay Zekâ ile <span class="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
                 <p>En kritik iş süreçlerinizi otomatikleştirmek için yapay zekânın gücünü kullanın; zamandan tasarruf edin, performansınızı ikiye katlayın.</p>
                 <ul>
                     <li>Operasyonel yükü azaltın</li>
@@ -53,45 +53,43 @@
                 <span class="trust-microcopy">Formu ilettikten sonra 24 saat içinde sizinle e-posta veya telefon üzerinden iletişime geçilir.</span>
             </div>
             <div class="hero-visual" id="tilt-card">
-                <div class="dashboard-mockup">
+                <div class="ai-terminal-mockup">
                     <!-- Top bar -->
-                    <div class="dmock-topbar">
-                        <div class="dmock-dot" style="background:#ef4444"></div>
-                        <div class="dmock-dot" style="background:#f59e0b"></div>
-                        <div class="dmock-dot" style="background:#10b981"></div>
-                        <div class="dmock-title">AI Dashboard — Prosesgo</div>
-                        <div class="dmock-badge">LIVE</div>
-                    </div>
-                    <!-- Stat cards -->
-                    <div class="dmock-stats">
-                        <div class="dmock-stat">
-                            <span class="dmock-stat-label">Otomasyon</span>
-                            <span class="dmock-stat-val" id="stat1">0</span>
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span style="background:#ef4444"></span>
+                            <span style="background:#f59e0b"></span>
+                            <span style="background:#10b981"></span>
                         </div>
-                        <div class="dmock-stat">
-                            <span class="dmock-stat-label">Tasarruf</span>
-                            <span class="dmock-stat-val" id="stat2">0%</span>
-                        </div>
-                        <div class="dmock-stat">
-                            <span class="dmock-stat-label">Görev</span>
-                            <span class="dmock-stat-val" id="stat3">0</span>
+                        <div class="terminal-title">Prosesgo AI Core — v2.5.4</div>
+                        <div class="terminal-status">
+                            <span class="pulse-indicator"></span> OTONOM
                         </div>
                     </div>
-                    <!-- Animated chart -->
-                    <canvas id="heroChart" class="dmock-canvas"></canvas>
-                    <!-- Bottom row -->
-                    <div class="dmock-bottom">
-                        <div class="dmock-bar-row">
-                            <span>Chatbot</span>
-                            <div class="dmock-bar"><div class="dmock-bar-fill" style="width:82%; background: linear-gradient(90deg,#3b82f6,#8b5cf6)"></div></div>
+                    <!-- Body -->
+                    <div class="terminal-body" style="position: relative;">
+                        <div class="scanner-line"></div>
+                        <!-- Left: Glowing Orb Core -->
+                        <div class="ai-core-section">
+                            <div class="orb-container">
+                                <div class="orb-core"></div>
+                                <div class="orb-ring orb-ring-1"></div>
+                                <div class="orb-ring orb-ring-2"></div>
+                                <div class="orb-ring orb-ring-3"></div>
+                                <div class="orb-glow"></div>
+                            </div>
+                            <div class="core-label">SİSTEM ÇALIŞIYOR</div>
                         </div>
-                        <div class="dmock-bar-row">
-                            <span>CRM</span>
-                            <div class="dmock-bar"><div class="dmock-bar-fill" style="width:65%; background: linear-gradient(90deg,#06b6d4,#3b82f6)"></div></div>
-                        </div>
-                        <div class="dmock-bar-row">
-                            <span>İçerik</span>
-                            <div class="dmock-bar"><div class="dmock-bar-fill" style="width:91%; background: linear-gradient(90deg,#10b981,#06b6d4)"></div></div>
+                        
+                        <!-- Right: Terminal Logs -->
+                        <div class="terminal-log-section">
+                            <div class="log-header">
+                                <span>CANLI İŞLEM GÜNLÜĞÜ</span>
+                                <span class="log-speed">■■■ 2.4 Tb/s</span>
+                            </div>
+                            <div class="log-container" id="ai-logs">
+                                <!-- JavaScript ile otomatik güncellenen loglar buraya gelecek -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -405,108 +403,50 @@
     <!-- Script file -->
     <script src="script.js"></script>
     <script>
-    // --- Animated counter ---
-    function animateCounter(el, target, suffix, duration) {
-        let start = 0, step = target / (duration / 16);
-        let timer = setInterval(() => {
-            start += step;
-            if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; }
-            el.textContent = Math.floor(start) + suffix;
-        }, 16);
-    }
-    setTimeout(() => {
-        animateCounter(document.getElementById('stat1'), 380, '+', 1800);
-        animateCounter(document.getElementById('stat2'), 87, '%', 1800);
-        animateCounter(document.getElementById('stat3'), 1240, '', 1800);
-    }, 400);
 
-    // --- Canvas chart ---
+    // --- AI Terminal Log Generator ---
     (function() {
-        const canvas = document.getElementById('heroChart');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        const W = () => canvas.parentElement.clientWidth;
-        const H = () => canvas.height;
-        function resize() {
-            canvas.width = canvas.parentElement.clientWidth;
-            canvas.height = 90;
+        const logContainer = document.getElementById('ai-logs');
+        if (!logContainer) return;
+
+        const modules = ['CRM_SYNC', 'BOT_REPLY', 'DATA_PIPE', 'EMAIL_SEQ', 'NLP_CORE'];
+        const actions = ['Optimize ediliyor', 'Veri analizi tamamlandı', 'Müşteri profili güncellendi', 'Kampanya tetiklendi', 'Randevu oluşturuldu', 'İçerik üretildi'];
+        
+        function getStatusSpan() {
+            const r = Math.random();
+            if (r > 0.85) return `<span class="status-active">[ÇALIŞIYOR]</span>`;
+            if (r > 0.70) return `<span class="status-wait">[BEKLİYOR]</span>`;
+            return `<span class="status-ok">[BAŞARILI]</span>`;
         }
-        resize();
-        window.addEventListener('resize', resize);
 
-        // Animate a sine-like AI chart line
-        let t = 0;
-        const points = [];
-        const NPTS = 60;
-        for (let i = 0; i < NPTS; i++) points.push(0.5);
-
-        function drawChart() {
-            t += 0.04;
-            points.shift();
-            // Noisy wave that looks like AI output metrics
-            let y = 0.45 + 0.28 * Math.sin(t) + 0.1 * Math.sin(t * 2.7) + 0.06 * Math.sin(t * 5.1);
-            y = Math.max(0.08, Math.min(0.92, y));
-            points.push(y);
-
-            const w = canvas.width, h = canvas.height;
-            ctx.clearRect(0, 0, w, h);
-
-            // Grid lines
-            ctx.strokeStyle = 'rgba(255,255,255,0.04)';
-            ctx.lineWidth = 1;
-            for (let g = 1; g < 4; g++) {
-                ctx.beginPath();
-                ctx.moveTo(0, h * g / 4);
-                ctx.lineTo(w, h * g / 4);
-                ctx.stroke();
+        function createLog() {
+            const time = new Date().toLocaleTimeString('tr-TR', { hour12: false, hour: "numeric", minute: "numeric", second: "numeric" });
+            const module = modules[Math.floor(Math.random() * modules.length)];
+            const action = actions[Math.floor(Math.random() * actions.length)];
+            
+            const div = document.createElement('div');
+            div.className = 'log-line';
+            div.innerHTML = `<span class="timestamp">${time}</span> <span class="module">${module}</span> ${action} ${getStatusSpan()}`;
+            
+            logContainer.appendChild(div);
+            
+            // Keep only last 6 logs
+            if (logContainer.children.length > 6) {
+                logContainer.removeChild(logContainer.firstChild);
             }
-
-            // Fill gradient under line
-            const grad = ctx.createLinearGradient(0, 0, 0, h);
-            grad.addColorStop(0, 'rgba(59,130,246,0.25)');
-            grad.addColorStop(1, 'rgba(59,130,246,0)');
-
-            ctx.beginPath();
-            points.forEach((p, i) => {
-                const x = (i / (NPTS - 1)) * w;
-                const py = h - p * h;
-                i === 0 ? ctx.moveTo(x, py) : ctx.lineTo(x, py);
-            });
-            const lastX = w, lastY = h - points[points.length-1] * h;
-            ctx.lineTo(lastX, h); ctx.lineTo(0, h); ctx.closePath();
-            ctx.fillStyle = grad;
-            ctx.fill();
-
-            // Main line
-            ctx.beginPath();
-            const lineGrad = ctx.createLinearGradient(0, 0, w, 0);
-            lineGrad.addColorStop(0, '#6366f1');
-            lineGrad.addColorStop(0.5, '#3b82f6');
-            lineGrad.addColorStop(1, '#06b6d4');
-            ctx.strokeStyle = lineGrad;
-            ctx.lineWidth = 2.5;
-            ctx.lineJoin = 'round';
-            points.forEach((p, i) => {
-                const x = (i / (NPTS - 1)) * w;
-                const py = h - p * h;
-                i === 0 ? ctx.moveTo(x, py) : ctx.lineTo(x, py);
-            });
-            ctx.stroke();
-
-            // Glowing dot at end
-            const dotX = w - 2;
-            const dotY = h - points[points.length-1] * h;
-            ctx.shadowBlur = 12;
-            ctx.shadowColor = '#3b82f6';
-            ctx.beginPath();
-            ctx.arc(dotX, dotY, 4, 0, Math.PI * 2);
-            ctx.fillStyle = '#fff';
-            ctx.fill();
-            ctx.shadowBlur = 0;
-
-            requestAnimationFrame(drawChart);
         }
-        drawChart();
+
+        // Generate a log every 800ms - 2000ms randomly
+        function scheduleLog() {
+            createLog();
+            setTimeout(scheduleLog, Math.random() * 1200 + 800);
+        }
+
+        // Initial setup
+        for(let i=0; i<4; i++) {
+            createLog();
+        }
+        scheduleLog();
     })();
 
     // --- 3D Tilt on mouse move ---
@@ -525,6 +465,63 @@
         });
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+        });
+    })();
+    // --- Typewriter Effect ---
+    (function() {
+        const textElement = document.querySelector('.typewriter-text');
+        if (!textElement) return;
+        const words = ['Hızlandırın.', 'Otomatikleştirin.', 'Uçuşa Geçirin.', 'Sıfır Hata ile Yönetin.'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                textElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typingSpeed = isDeleting ? 40 : 100;
+            
+            if (!isDeleting && charIndex === currentWord.length) {
+                typingSpeed = 2000; // Wait before delete
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingSpeed = 500;
+            }
+            
+            setTimeout(type, typingSpeed);
+        }
+        
+        setTimeout(type, 1000);
+    })();
+
+    // --- Cursor Glow Effect ---
+    (function() {
+        const heroSection = document.getElementById('hero-section');
+        const cursorGlow = document.getElementById('cursor-glow');
+        if (!heroSection || !cursorGlow) return;
+        
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            // Calculate percentage position
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            
+            cursorGlow.style.left = `${x}%`;
+            cursorGlow.style.top = `${y}%`;
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            cursorGlow.style.left = '50%';
+            cursorGlow.style.top = '50%';
         });
     })();
     </script>
