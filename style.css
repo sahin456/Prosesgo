@@ -320,6 +320,8 @@ section {
   display: flex;
   flex: 1;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 /* AI Core Orb Section */
@@ -879,22 +881,122 @@ section {
   font-size: 1rem;
 }
 
+/* Hamburger Button */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 200;
+}
+
+.hamburger-btn span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  background: rgba(9, 9, 11, 0.98);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-menu ul li a {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.mobile-menu ul li a:hover { color: #fff; }
+
+.mobile-menu.open {
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero-container, .process-grid, .services-grid, .testimonials-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .nav-links {
-    display: none; /* simple mobile nav hide for now */
+
+  /* Desktop nav gizle, hamburger göster */
+  #main-nav, .desktop-cta {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Hero visual daha küçük */
+  .hero-visual {
+    aspect-ratio: auto;
+    min-height: 280px;
+  }
+
+  /* Terminal body mobilde dikey diz */
+  .terminal-body {
+    flex-direction: column !important;
+  }
+
+  .ai-core-section {
+    flex: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 1rem !important;
+  }
+
+  .orb-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .orb-core { width: 26px; height: 26px; }
+  .orb-ring-1 { width: 46px; height: 46px; }
+  .orb-ring-2 { width: 63px; height: 63px; }
+  .orb-ring-3 { width: 80px; height: 80px; }
+
+  .terminal-log-section {
+    flex: none !important;
+    padding: 0.75rem !important;
+    max-height: 150px;
   }
 }
 
@@ -902,6 +1004,37 @@ section {
   .benefits-grid, .footer-grid {
     grid-template-columns: 1fr;
   }
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+
+  .hero {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-visual {
+    min-height: 260px;
+  }
+
+  .log-line {
+    font-size: 0.65rem;
+  }
+
+  /* Trust strip ortalama */
+  .trust-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .trust-divider {
+    width: 60px;
+    height: 1px;
+  }
+
+  .trust-metric {
+    text-align: center;
+  }
 }
+

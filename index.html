@@ -22,17 +22,32 @@
                 <img src="favicon_perfect.png?v=4" alt="Prosesgo Logo" style="height: 32px; width: auto; object-fit: contain;">
                 Prosesgo
             </a>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
-                    <li><a href="#surec">Süreç</a></li>
-                    <li><a href="#hizmetler">Hizmetler</a></li>
-                    <li><a href="#faydalar">Faydalar</a></li>
-                    <li><a href="#gorusler">Görüşler</a></li>
-                    <li><a href="#hakkimizda">Hakkımızda</a></li>
-                    <li><a href="#sss">SSS</a></li>
+                    <li><a href="#surec" class="nav-link-item">Süreç</a></li>
+                    <li><a href="#hizmetler" class="nav-link-item">Hizmetler</a></li>
+                    <li><a href="#faydalar" class="nav-link-item">Faydalar</a></li>
+                    <li><a href="#gorusler" class="nav-link-item">Görüşler</a></li>
+                    <li><a href="#hakkimizda" class="nav-link-item">Hakkımızda</a></li>
+                    <li><a href="#sss" class="nav-link-item">SSS</a></li>
                 </ul>
             </nav>
-            <button class="btn btn-primary open-modal-btn">Görüşme Planla</button>
+            <button class="btn btn-primary open-modal-btn desktop-cta">Görüşme Planla</button>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menüyü Aç">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#surec" class="nav-link-item">Süreç</a></li>
+                <li><a href="#hizmetler" class="nav-link-item">Hizmetler</a></li>
+                <li><a href="#faydalar" class="nav-link-item">Faydalar</a></li>
+                <li><a href="#gorusler" class="nav-link-item">Görüşler</a></li>
+                <li><a href="#hakkimizda" class="nav-link-item">Hakkımızda</a></li>
+                <li><a href="#sss" class="nav-link-item">SSS</a></li>
+                <li><button class="btn btn-primary open-modal-btn" style="width:100%; margin-top:0.5rem;">Görüşme Planla</button></li>
+            </ul>
         </div>
     </header>
 
@@ -67,7 +82,7 @@
                         </div>
                     </div>
                     <!-- Body -->
-                    <div class="terminal-body" style="position: relative;">
+                    <div class="terminal-body">
                         <div class="scanner-line"></div>
                         <!-- Left: Glowing Orb Core -->
                         <div class="ai-core-section">
